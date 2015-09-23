@@ -1,8 +1,8 @@
 package kr.ac.embedded.kookmin.puzzle1;
 
-public class Rowboat extends Boat {
+public class Rowboat /** **/ /** **/ {
 	
-	public void rowTheBoat() {
+	public /** **/ rowTheBoat() {
 		System.out.print("stroke natasha");
 	}
 	
