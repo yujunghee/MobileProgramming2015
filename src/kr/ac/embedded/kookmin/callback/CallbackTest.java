@@ -14,7 +14,7 @@ public class CallbackTest {
 			@Override
 			public void onMaxNumber(int number, int exceed) {
 				// TODO Auto-generated method stub
-				System.out.println("Current sum is " + number + " and exceeds " +exceed);
+				// 구현하시오 //
 			}
 			
 		};
