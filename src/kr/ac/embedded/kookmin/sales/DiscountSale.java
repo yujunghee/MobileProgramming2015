@@ -53,7 +53,8 @@ public class DiscountSale extends Sale {
 		/** 구현 하시오 **/ 
 	}
 	
+	
 	public DiscountSale clone() {
-		/** 구현 하시오 **/ 
+		/** 구현 하시오....  임시생성자 사용 **/ 
 	}
 }
