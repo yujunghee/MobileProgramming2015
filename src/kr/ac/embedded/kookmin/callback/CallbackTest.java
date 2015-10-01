@@ -23,6 +23,7 @@ public class CallbackTest implements OnMaxNumberCb {
 	@Override
 	public void onMaxNumber(int number, int exceed) {
 		// TODO Auto-generated method stub
+		// 구현하시오 //
 	}
 	
 
