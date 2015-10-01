@@ -11,7 +11,8 @@ public class DiscountSale extends Sale {
 	private double	discount;	// A percent of the price. Cannot be negative.
 								
 	public DiscountSale() {
-		/** 구현 하시오 **/ 
+		super();
+		discount = 0;
 	}
 	
 	/**
@@ -19,11 +20,13 @@ public class DiscountSale extends Sale {
 	 * theDiscount is expressed as a percent of the price and is nonnegative.
 	 */
 	public DiscountSale(String theName, double thePrice, double theDiscount) {
-		/** 구현 하시오 **/ 
+		super(theName, thePrice);
+		setDiscount(theDiscount);
 	}
 	
 	public DiscountSale(DiscountSale originalObject) {
-		/** 구현 하시오 **/ 
+		super(originalObject);
+		discount = originalObject.discount;
 	}
 	
 	public static void announcement() {
@@ -31,18 +34,24 @@ public class DiscountSale extends Sale {
 	}
 	
 	public double bill() {
-		/** 구현 하시오 **/ 
+		double fraction = discount / 100;
+		return (1 - fraction) * getPrice();
 	}
 	
 	public double getDiscount() {
-		/** 구현 하시오 **/ 
+		return discount;
 	}
 	
 	/**
 	 * Precondition: Discount is nonnegative.
 	 */
 	public void setDiscount(double newDiscount) {
-		/** 구현 하시오 **/ 
+		if (newDiscount >= 0)
+			discount = newDiscount;
+		else {
+			System.out.println("Error: Negative discount.");
+			System.exit(0);
+		}
 	}
 	
 	public String toString() {
@@ -50,11 +59,17 @@ public class DiscountSale extends Sale {
 	}
 	
 	public boolean equals(Object otherObject) {
-		/** 구현 하시오 **/ 
+		if (otherObject == null)
+			return false;
+		else if (getClass() != otherObject.getClass())
+			return false;
+		else {
+			DiscountSale otherDiscountSale = (DiscountSale) otherObject;
+			return (super.equals(otherDiscountSale) && discount == otherDiscountSale.discount);
+		}
 	}
 	
-	
 	public DiscountSale clone() {
-		/** 구현 하시오....  임시생성자 사용 **/ 
+		return new DiscountSale(this);
 	}
 }
